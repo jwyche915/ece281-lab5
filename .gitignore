@@ -18,6 +18,8 @@
 !src/**/*.xdc
 !src/**/*.bd
 !src/**/*.bit
+!basic_cpu_srcs/
+!basic_cpu_srcs/**/
 
 # or configuration files
 !cfg/

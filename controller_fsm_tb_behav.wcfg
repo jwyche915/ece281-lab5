@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="controller_fsm_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="controller_fsm_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="240.001 ns"></ZoomEndTime>
+      <Cursor1Time time="240.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="229"></NameColumnWidth>
+      <ValueColumnWidth column_width="158"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="5" />
+   <wvobject fp_name="/controller_fsm_tb/w_reset" type="logic">
+      <obj_property name="ElementShortName">w_reset</obj_property>
+      <obj_property name="ObjectShortName">w_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controller_fsm_tb/w_adv" type="logic">
+      <obj_property name="ElementShortName">w_adv</obj_property>
+      <obj_property name="ObjectShortName">w_adv</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controller_fsm_tb/w_cycle" type="array">
+      <obj_property name="ElementShortName">w_cycle[3:0]</obj_property>
+      <obj_property name="ObjectShortName">w_cycle[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/controller_fsm_tb/controller_fsm_inst/current_cycle" type="other">
+      <obj_property name="ElementShortName">current_cycle</obj_property>
+      <obj_property name="ObjectShortName">current_cycle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controller_fsm_tb/controller_fsm_inst/next_cycle" type="other">
+      <obj_property name="ElementShortName">next_cycle</obj_property>
+      <obj_property name="ObjectShortName">next_cycle</obj_property>
+   </wvobject>
+</wave_config>

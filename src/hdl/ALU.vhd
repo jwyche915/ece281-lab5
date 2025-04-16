@@ -35,21 +35,46 @@ library ieee;
 
 
 entity ALU is
--- TODO
+    Port (  i_A : in std_logic_vector (7 downto 0);
+            i_B : in std_logic_vector (7 downto 0);
+            i_op : in std_logic_vector (2 downto 0);
+            o_result : out std_logic_vector (7 downto 0);
+            o_flags : out std_logic_vector (2 downto 0)
+    );
 end ALU;
 
 architecture behavioral of ALU is 
-  
-	-- declare components and signals
+
+	-- declare components
+    component ripple_adder is
+        Port ( A : in std_logic_vector (7 downto 0);
+               B : in std_logic_vector (7 downto 0);
+               Cin : in std_logic;
+               S : out std_logic_vector (7 downto 0);
+               Cout : out std_logic
+       );
+    end component ripple_adder;
+    
+    -- declare signals
+    signal w_add_sub_signal : std_logic;
+    signal w_i_B : std_logic_vector (7 downto 0);      -- wire from add_sub? mux to port B of adder
 
   
 begin
 	-- PORT MAPS ----------------------------------------
-
+    ripple_adder_inst : ripple_adder
+    Port Map (
+        A => i_A,
+        B => w_i_B,         -- mux selects if i_B is passed to adder (addition) or not i_B is passed to adder (subtraction) via w_i_B
+        Cin => i_op(0),     -- if i_op(0)='0' then A+B...if i_op(0)='1' then A-B (2s compliment)
+        S => o_result,
+        Cout => o_flags(0)  -- carry flag set to LSB of o_flags
+    );
 	
 	
-	-- CONCURRENT STATEMENTS ----------------------------
-	
+	-- CONCURRENT STATEMENTS ----------------------------	
+	w_i_B <=   i_B when (i_op(0) = '0') else   -- mux selects if i_B is passed to adder (addition) or not i_B is passed to adder (subtraction)
+	           not i_B;
 	
 	
 end behavioral;
